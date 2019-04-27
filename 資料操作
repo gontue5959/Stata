@@ -1,0 +1,25 @@
+rename old_name new_name	/*columns重新命名*/
+
+order x1 x2 x3...	/*重新排序*/
+
+keep X1 X2		/*保留欄*/
+
+drop cc /*移除columns*/
+
+move X1 X2		/*移動欄*/
+
+/*移除離群值*/
+ssc install winsor /*安裝winsor套件(第一次使使用)*/
+winsor x1, gen(x1_w) p(0.05)
+
+/*產生判斷*/
+gen cc = COP*COV
+replace cc  =0  if COV ==1
+
+
+
+
+
+
+
+
