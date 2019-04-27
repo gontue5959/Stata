@@ -1,0 +1,15 @@
+/*產生控制變數---------------------------------------*/
+/*方法一*/
+gen dEnglish=0
+replace dEnglish =1 if language==2
+replace dEnglish=. if missing(language)
+gen dSpanish=0
+replace dSpanish =1 if language==3
+replace dSpanish=. if missing(language)
+
+/*方法二*/
+tabulate sex, gen(S)
+rename S1 dtcb
+rename S2 dtcg
+
+
