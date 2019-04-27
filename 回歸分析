@@ -1,0 +1,9 @@
+cd c:\stata\
+est clear
+
+eststo: reg o_CR EXP_W , vce(r)
+eststo: reg o_CR IP_W IGUA ANN FQY iTSE MB , vce(r)
+eststo: reg o_CR EXP_W IP_W IGUA ANN FQY iTSE MB , vce(r)
+
+esttab  using try_3.rtf, replace starlevels(* .1 ** 0.05 *** 0.01) order(_cons EXP_W IP_W IGUA ANN FQY iTSE MB )
+
