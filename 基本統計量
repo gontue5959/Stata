@@ -1,0 +1,17 @@
+/*敘述統計量，col(stat)為轉置---------------------------*/
+tabstat X1 X2... ,stat(mean n max min sd )col(stat) 
+tabstat ER COP COV IP MP CR EXP DBC INT GUA TCB VIX R SMB HML,stat(mean n max min sd )col(stat) long	/*敘述統計量，col(stat)為轉置*/
+tabstat price weight mpg rep78, by(foreign) stat(mean sd min max) nototal long format(%12.3fc ) col(stat)
+
+stat (統計量選項，括號內用space隔開)
+by (類別)
+
+col(stat)的話--->轉置
+long--->左邊欄寬加大    longstub specifies that the left stub of the table be made wider
+nototal --->不顯示加總
+format(%12.3fc ) -->控制小數點位數和逗點，format(%12.3fc ) <--小數點後三位，千分位逗號
+
+*千分位是否加逗號  The %fc format
+   
+*小數點後面幾位 The %f format
+
