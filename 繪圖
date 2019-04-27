@@ -1,0 +1,3 @@
+twoway scatter X1 X2		/*散布圖*/
+twoway lowess X1 X2		/*lowess圖*/
+lowess X1 X2				/*合併圖*/
