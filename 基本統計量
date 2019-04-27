@@ -15,3 +15,8 @@ format(%12.3fc ) -->控制小數點位數和逗點，format(%12.3fc ) <--小數�
    
 *小數點後面幾位 The %f format
 
+/*相關性分析*/
+correlate X1 X2 X3 X4
+/*相關性分析(加入顯著星號)*/
+pwcorr X1 X2 X3 X4, star(.05)
+
