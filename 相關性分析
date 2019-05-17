@@ -1,0 +1,11 @@
+/*install package*/
+ssc install estout, replace
+
+estpost correlate ER EXP_W o_CR IP_W IGUA ANN FQY ITCB iTSE MB R SMB HML, matrix listwise
+est store c1
+esttab * using test_correlation.rtf, unstack not noobs compress replace starlevels(* .1 ** 0.05 *** 0.01)
+
+/*相關性分析*/
+correlate X1 X2 X3 X4
+/*相關性分析(加入顯著星號)*/
+pwcorr X1 X2 X3 X4, star(.05)
